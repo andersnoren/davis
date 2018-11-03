@@ -31,6 +31,10 @@ Source: https://fonts.google.com/specimen/PT+Serif
 
 == Changelog ==
 
+Version 1.13 (2018-10-07)
+-------------------------
+- Added Gutenberg support, block styling
+
 Version 1.12 (2017-12-03)
 -------------------------
 - Made functions.php functions pluggable

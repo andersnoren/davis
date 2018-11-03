@@ -141,4 +141,35 @@ add_action( 'customize_register', array( 'davis_customize', 'davis_register' ) )
 // Enqueue live preview javascript in Theme Customizer admin screen
 add_action( 'customize_preview_init', array( 'davis_customize' , 'davis_live_preview' ) );
 
+
+/* ---------------------------------------------------------------------------------------------
+   SPECIFY GUTENBERG SUPPORT
+------------------------------------------------------------------------------------------------ */
+
+
+if ( ! function_exists( 'davis_add_gutenberg_features' ) ) :
+
+	function davis_add_gutenberg_features() {
+
+		/* Gutenberg Palette --------------------------------------- */
+
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name' 	=> _x( 'Black', 'Name of the black color in the Gutenberg palette', 'davis' ),
+				'slug' 	=> 'black',
+				'color' => '#000',
+			),
+			array(
+				'name' 	=> _x( 'White', 'Name of the white color in the Gutenberg palette', 'davis' ),
+				'slug' 	=> 'white',
+				'color' => '#fff',
+			),
+		) );
+
+	}
+	add_action( 'after_setup_theme', 'davis_add_gutenberg_features' );
+
+endif;
+
+
 ?>

@@ -2,8 +2,8 @@
 
 	Theme Name: Davis
     Text Domain: davis
-	Version: 1.12
-	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a *really* lightweight blog theme. It consists of just three PHP files and weighs in at 60 KB, excluding screenshot.png. It features the aside post format, a Dark Mode style option, featured images and a responsive design. Demo: http://www.andersnoren.se/themes/davis/
+	Version: 1.13
+	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a *really* lightweight blog theme. It consists of just three PHP files and weighs in at 60 KB, excluding screenshot.png. It features the aside post format, Gutenberg support, a Dark Mode style option, featured images and a responsive design. Demo: http://www.andersnoren.se/themes/davis/
 	Tags: blog, one-column, custom-menu, featured-images, post-formats, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -432,6 +432,14 @@ dt {
 
 dd + dt { margin-top: 15px; }
 
+pre {
+	font-family: Menlo, monospace;
+	font-size: 0.9em;
+	line-height: 1.5;
+	white-space: pre-wrap;       /* css-3 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
 /* Quotes ----------------------------- */
 
 blockquote {
@@ -448,9 +456,8 @@ blockquote cite:before { content: "— "; }
 
 /* Media ------------------------------ */
 
-div.wp-caption { 
-	display: block;
-	margin-bottom: 30px; 
+figure {
+	margin: 0;
 }
 
 .alignleft,
@@ -470,8 +477,13 @@ div.wp-caption {
 }
 
 .aligncenter,
-.alignnone { margin: 0 auto; }
+.alignnone,
+.alignwide,
+.alignfull { 
+	margin: 0 auto 30px auto; 
+}
 
+figcaption,
 .gallery-caption,
 .wp-caption-text {
     font-size: 0.9em;
@@ -481,6 +493,15 @@ div.wp-caption {
 
 .aligncenter .wp-caption-text { text-align: center; }
 .alignright .wp-caption-text { text-align: right; }
+
+/* GUTENBERG CLASSES */
+
+.alignfull {
+	position: relative;
+		left: calc( 50% - 50vw );
+	max-width: 100vw;
+	width: 100vw;
+}
 
 /* Inputs ----------------------------- */
 
@@ -616,6 +637,106 @@ tbody > tr:nth-child(even) { background-color: #f6f6f6; }
 .dark-mode caption,
 .dark-mode th {
     border-bottom-color: #444;
+}
+
+
+/* Gutenberg Accent Colors --------------------------------------- */
+
+.has-background { background-color: #000; }
+
+.has-black-color { color: #000; }
+.has-black-background-color { background-color: #000; }
+
+.has-white-color { color: #fff; }
+.has-white-background-color { background-color: #fff; }
+
+
+/* Block: Image --------------------------------------- */
+
+.wp-block-image .aligncenter > figcaption, 
+.wp-block-image .alignleft > figcaption, 
+.wp-block-image .alignright > figcaption, 
+.wp-block-image.is-resized > figcaption {
+	display: block;
+	width: 100%;
+}
+
+
+/* Block: File --------------------------------------- */
+
+.wp-block-file {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin: 30px 0;
+}
+
+.wp-block-file a:not(.wp-block-file__button) {
+	text-decoration: none;
+}
+
+.wp-block-file__button:hover,
+.wp-block-button__link:hover {
+	opacity: .85;
+	text-decoration: none;
+}
+
+
+/* Block: Quote --------------------------------------- */
+
+.wp-block-quote.is-large {
+	margin-bottom: 30px;
+}
+
+.wp-block-quote.is-large p, 
+.wp-block-quote.is-style-large p {
+	font-size: 1.33em;
+	line-height: 1.5;
+}
+
+
+/* Block: Pullquote --------------------------------------- */
+
+.wp-block-pullquote {
+	padding: 0;
+}
+
+
+/* Block: Gallery --------------------------------------- */
+
+.wp-block-gallery .blocks-gallery-image figcaption, 
+.wp-block-gallery .blocks-gallery-item figcaption {
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+.wp-block-gallery.alignfull {
+	padding: 0 8px;
+}
+
+ul.wp-block-gallery:not(.alignright) {
+	margin-left: 0;
+}
+
+
+/* Block: Cover Image --------------------------------------- */
+
+.wp-block-cover-image.alignfull {
+	min-height: 75vh;
+}
+
+
+/* Block: Column --------------------------------------- */
+
+.wp-block-column {
+	padding: 0 5px;
+}
+
+
+/* Block: Audio --------------------------------------- */
+
+.wp-block-audio audio {
+	width: 100%;
 }
 
 
