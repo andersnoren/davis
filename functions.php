@@ -64,6 +64,9 @@ if ( ! function_exists( 'davis_load_style' ) ) {
 if ( ! function_exists( 'davis_load_scripts' ) ) {
 
 	function davis_load_scripts() {
+
+		wp_enqueue_script( 'davis_construct', get_template_directory_uri() . '/assets/js/construct.js', array( 'jquery' ), wp_get_theme( 'davis' )->get( 'Version' ), true );
+
 		if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}

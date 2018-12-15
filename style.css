@@ -2,8 +2,8 @@
 
 	Theme Name: Davis
     Text Domain: davis
-	Version: 1.13
-	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a *really* lightweight blog theme. It consists of just three PHP files and weighs in at 60 KB, excluding screenshot.png. It features the aside post format, Gutenberg support, a Dark Mode style option, featured images and a responsive design. Demo: http://www.andersnoren.se/themes/davis/
+	Version: 1.14
+	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a *really* lightweight blog theme. It consists of just three PHP files and weighs in at 61 KB, excluding screenshot.png. It features the aside post format, Gutenberg support, a Dark Mode style option, featured images and a responsive design. Demo: http://www.andersnoren.se/themes/davis/
 	Tags: blog, one-column, custom-menu, featured-images, post-formats, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -62,8 +62,6 @@ ol, ul { list-style:none; }
 blockquote:before, 
 blockquote:after { content:""; }
 
-a { outline:none; }
-
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
@@ -109,12 +107,12 @@ input[type="search"]::-webkit-search-results-decoration {
 body {
     background: #fff;
 	border: none;
-    color: #111;
+    color: #000;
     font-size: 18px;
 }
 
 body.dark-mode {
-	background: #111;
+	background: #000;
 	color: #fff;
 }
 
@@ -131,7 +129,7 @@ a {
 
 a,
 a:hover {
-	color: #111;
+	color: #000;
 }
 
 .dark-mode a,
@@ -139,7 +137,8 @@ a:hover {
 	color: #fff;
 }
 
-body a:hover { 
+body a:hover,
+body a:focus { 
 	text-decoration: underline; 
 }
 
@@ -149,16 +148,21 @@ img {
     max-width: 100%;
 }
 
+iframe {
+	display: block;
+	width: 100%;
+}
+
 .clear { clear: both; }
 
 ::selection {
-	background: #111;
+	background: #000;
 	color: #FFF;
 }
 
-input::-webkit-input-placeholder { color: #999; }
-input:-ms-input-placeholder { color: #999; }
-input::-moz-placeholder { color: #999; }
+input::-webkit-input-placeholder { color: #767676; }
+input:-ms-input-placeholder { color: #767676; }
+input::-moz-placeholder { color: #767676; }
 
 
 /* -------------------------------------------------------------------------------- */
@@ -183,8 +187,27 @@ header {
     width: 90%;
 }
 
-.menu { 
+.toggle-menu {
+	background: none;
+	border-radius: 0;
+	box-shadow: none;
+	font-size: 14px;
+	letter-spacing: 1px;
+	margin: 20px auto 0 auto;
+	text-transform: uppercase;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+.show-menu .toggle-menu { 
+	text-decoration: line-through; 
+}
+
+nav { 
 	margin: 30px 0 0; 
+}
+
+.menu {
 	text-align: center;
 }
 
@@ -203,6 +226,7 @@ header {
     }
 
     .menu ul {
+        margin-left: -100px;
         position: absolute;
             left: -10000px;
             top: 15px;
@@ -216,7 +240,7 @@ header {
 
     .menu li ul:before {
         border: 6px solid transparent;
-        border-bottom-color: #111;
+        border-bottom-color: #000;
         content: "";
         display: block;
         margin-left: -6px;
@@ -230,7 +254,7 @@ header {
     }
 
     .menu ul a {
-        background: #111;
+        background: #000;
         color: #fff;
         display: block;
         padding: 15px;
@@ -239,19 +263,15 @@ header {
 	
 	.dark-mode .menu ul a {
 		background: #fff;
-		color: #111;
+		color: #000;
 	}
-    
-    .menu ul li:first-child > a { border-radius: 3px 3px 0 0; }
-    .menu ul li:last-child > a { border-radius: 0 0 3px 3px; }
-    .menu ul li:last-child:first-child > a { border-radius: 3px 3px 3px 3px; }
 
     .menu ul a:hover { color: #fff; }
-	.dark-mode .menu ul a:hover { color: #111; }
+	.dark-mode .menu ul a:hover { color: #000; }
 
-    .menu > li:hover > ul {
-        left: 50%;
-        margin-left: -100px;
+	.menu > li:hover > ul,
+	.menu ul.focusable {
+		left: 50%;
     }
     
     .menu ul li ul {
@@ -263,7 +283,7 @@ header {
     
     .menu ul li ul:before {
         border-color: transparent;
-        border-right-color: #111;
+        border-right-color: #000;
         left: 14px;
         top: 18px;
     }
@@ -273,20 +293,25 @@ header {
         border-right-color: #fff;
 	}
 
-    .menu ul li:hover > ul {
+	.menu ul li:hover > ul,
+	.menu ul ul.focusable {
         left: 200px;
     }
 
 }
 
-header h2 {
+header {
+	text-align: center;
+}
+
+header .site-title {
     font-size: 1.5em;
 	font-weight: 700;
     margin-top: 80px;
 	text-align: center;
 }
 
-header p {
+header .site-description {
     margin-top: 20px;
 	text-align: center;
 }
@@ -320,7 +345,7 @@ footer:before {
     background-image: url( assets/images/dark-sep.png );
 }
 
-.title {
+.entry-title {
     line-height: 1.4;
 	text-align: center;
 }
@@ -331,7 +356,7 @@ footer:before {
 }
 
 .meta {
-    color: #999;
+    color: #767676;
 	margin-top: 30px;
 }
 
@@ -343,10 +368,10 @@ footer:before {
 
 span.sep { margin: 0 15px; }
 
-.meta p:first-child + p { margin-top: 15px; }
+.meta p + p { margin-top: 15px; }
 
 .meta a,
-.meta a:hover { color: #999; }
+.meta a:hover { color: #767676; }
 
 .sticky {}
 
@@ -358,19 +383,11 @@ span.sep { margin: 0 15px; }
 
 .content * { max-width: 100%; }
 
-.content a { border-bottom: 1px solid #111; }
+.content a { text-decoration: underline; }
 
 .content a:hover { 
-    border-color: #666;
-    color: #666;
-    text-decoration: none; 
-}
-
-.dark-mode .content a { border-bottom-color: #fff; }
-
-.dark-mode .content a:hover { 
-    border-color: #999;
-	color: #999;
+	color: #767676;
+	text-decoration: underline; 
 }
 
 em {
@@ -533,7 +550,7 @@ input[type="tel"],
 input[type="text"],
 input[type="url"] {
     border: 1px solid #ddd;
-    color: #111;
+    color: #000;
 	display: block;
 	font-size: 0.9em;
     margin: 0 0 15px 0;
@@ -547,7 +564,7 @@ input[type="url"] {
 .dark-mode input[type="tel"],
 .dark-mode input[type="text"],
 .dark-mode input[type="url"] {
-	background: #111;
+	background: #000;
     border-color: #444;
     color: #fff;
 }
@@ -557,10 +574,10 @@ textarea {
 	height: 200px;
 }
 
-input[type="button"],
 input.button,
+input[type="button"],
 input[type="submit"] {
-	background: #111;
+	background: #000;
     border: none;
     color: #fff;
     display: inline-block;
@@ -574,20 +591,16 @@ input[type="submit"] {
 .dark-mode input.button,
 .dark-mode input[type="submit"] {
 	background: #fff;
-	color: #111;
+	color: #000;
 }
 
 input[type="button"]:hover,
 input.button:hover,
-input[type="submit"]:hover {
-	background: #333;
-	cursor: pointer;
-}
-
+input[type="submit"]:hover,
 .dark-mode input[type="button"]:hover,
 .dark-mode input.button:hover,
 .dark-mode input[type="submit"]:hover {
-	background: #ddd;
+	background: #767676;
 	cursor: pointer;
 }
 
@@ -788,7 +801,7 @@ ul.wp-block-gallery:not(.alignright) {
 }
 
 .comment-meta a,
-.comment-meta a:hover { color: #999; }
+.comment-meta a:hover { color: #767676; }
 
 .comment .reply {
     font-size: 14px;
@@ -797,7 +810,7 @@ ul.wp-block-gallery:not(.alignright) {
     text-align: right;
 }
 
-.comment .reply a { color: #999; }
+.comment .reply a { color: #767676; }
 .comment .reply a:hover { text-decoration: underline; }
 
 /* Respond ---------------------------- */
@@ -854,14 +867,10 @@ footer p + p {
     body { font-size: 16px; }
     
     .toggle-menu {
-        font-size: 14px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
+		display: block;
+	}
     
-    .show-menu .toggle-menu { text-decoration: line-through; }
-    
-    .menu { 
+    nav { 
         display: none;
         margin: 20px 0 0;
     }
@@ -873,7 +882,7 @@ footer p + p {
     
     .menu li li { font-style: italic; }
     
-    .show-menu .menu { display: block; }
+    .show-menu nav { display: block; }
     
     header { margin-bottom: 40px; }
     

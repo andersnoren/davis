@@ -31,6 +31,18 @@ Source: https://fonts.google.com/specimen/PT+Serif
 
 == Changelog ==
 
+Version 1.14 (2018-12-15)
+-------------------------
+- Accessibility updates:
+	- Added skip links
+	- Added keyboard navigation support to the main menu
+	- Removed superfluous title attributes
+	- Updated heading structure
+	- Added aria landmarks, made the HTML more semantic
+	- Updated colors to achieve AA contrast
+- Better handling of embeds
+- Updated theme description
+
 Version 1.13 (2018-10-07)
 -------------------------
 - Added Gutenberg support, block styling
