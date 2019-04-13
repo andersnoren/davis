@@ -3,7 +3,7 @@
 /* THEME SETUP
 ------------------------------------------------ */
 
-if ( ! function_exists( 'davis_setup' ) ) {
+if ( ! function_exists( 'davis_setup' ) ) :
 
 	function davis_setup() {
 		
@@ -38,49 +38,50 @@ if ( ! function_exists( 'davis_setup' ) ) {
 		
 	}
 	add_action( 'after_setup_theme', 'davis_setup' );
-
-}
+endif;
 
 
 /* ENQUEUE STYLES
 ------------------------------------------------ */
 
-if ( ! function_exists( 'davis_load_style' ) ) {
-
+if ( ! function_exists( 'davis_load_style' ) ) :
 	function davis_load_style() {
+
+		$theme_version = wp_get_theme( 'davis' )->get( 'Version' );
+
 		if ( ! is_admin() ) {
 			wp_register_style( 'davis_fonts', '//fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' );
 			wp_enqueue_style( 'davis_style', get_stylesheet_uri(), array( 'davis_fonts' ) );
 		} 
+
 	}
 	add_action( 'wp_enqueue_scripts', 'davis_load_style' );
-
-}
+endif;
 
 
 /* ENQUEUE COMMENT-REPLY.JS
 ------------------------------------------------ */
 
-if ( ! function_exists( 'davis_load_scripts' ) ) {
-
+if ( ! function_exists( 'davis_load_scripts' ) ) :
 	function davis_load_scripts() {
 
-		wp_enqueue_script( 'davis_construct', get_template_directory_uri() . '/assets/js/construct.js', array( 'jquery' ), wp_get_theme( 'davis' )->get( 'Version' ), true );
+		$theme_version = wp_get_theme( 'davis' )->get( 'Version' );
+
+		wp_enqueue_script( 'davis_construct', get_template_directory_uri() . '/assets/js/construct.js', array( 'jquery' ), $theme_version, true );
 
 		if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
 	}
 	add_action( 'wp_enqueue_scripts', 'davis_load_scripts' );
-
-}
+endif;
 
 
 /* BODY CLASSES
 ------------------------------------------------ */
 
-if ( ! function_exists( 'davis_body_classes' ) ) {
-
+if ( ! function_exists( 'davis_body_classes' ) ) :
 	function davis_body_classes( $classes ) {
 
 		// Check whether we want it darker
@@ -89,10 +90,10 @@ if ( ! function_exists( 'davis_body_classes' ) ) {
 		}
 		
 		return $classes;
+
 	}
 	add_action( 'body_class', 'davis_body_classes' );
-
-}
+endif;
 
 
 /* CUSTOMIZER SETTINGS
@@ -151,7 +152,6 @@ add_action( 'customize_preview_init', array( 'davis_customize' , 'davis_live_pre
 
 
 if ( ! function_exists( 'davis_add_gutenberg_features' ) ) :
-
 	function davis_add_gutenberg_features() {
 
 		/* Gutenberg Palette --------------------------------------- */
@@ -171,7 +171,6 @@ if ( ! function_exists( 'davis_add_gutenberg_features' ) ) :
 
 	}
 	add_action( 'after_setup_theme', 'davis_add_gutenberg_features' );
-
 endif;
 
 

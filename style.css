@@ -2,11 +2,11 @@
 
 	Theme Name: Davis
     Text Domain: davis
-	Version: 1.14
-	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a *really* lightweight blog theme. It consists of just three PHP files and weighs in at 61 KB, excluding screenshot.png. It features the aside post format, Gutenberg support, a Dark Mode style option, featured images and a responsive design. Demo: http://www.andersnoren.se/themes/davis/
+	Version: 1.17
+	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a *really* lightweight blog theme. It consists of just three PHP files and weighs in at 61 KB, excluding screenshot.png. It features the aside post format, Block Editor/Gutenberg support, a Dark Mode style option, featured images and a responsive design. Demo: https://www.andersnoren.se/themes/davis/
 	Tags: blog, one-column, custom-menu, featured-images, post-formats, threaded-comments, translation-ready
 	Author: Anders Norén
-	Author URI: http://www.andersnoren.se
+	Author URI: https://www.andersnoren.se
 	License: GNU General Public License version 2.0
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -23,8 +23,9 @@
 	5.  Post Content
 	6.	Comments
 	7.	Pagination
-	8.	Footer
-	9.  Media Queries
+	8.	Error 404
+	9.	Footer
+	10. Media Queries
 
 ----------------------------------------------------------------------------------- */
 
@@ -178,11 +179,11 @@ input::-moz-placeholder { color: #767676; }
 
 
 /* -------------------------------------------------------------------------------- */
-/*	3.	Header
+/*	3.	Site Header
 /* -------------------------------------------------------------------------------- */
 
 
-header { 
+.site-header { 
     margin: 0 auto 100px auto;
     width: 90%;
 }
@@ -203,7 +204,7 @@ header {
 	text-decoration: line-through; 
 }
 
-nav { 
+.site-header nav { 
 	margin: 30px 0 0; 
 }
 
@@ -300,19 +301,22 @@ nav {
 
 }
 
-header {
+.site-header {
 	text-align: center;
 }
 
-header .site-title {
+.site-header .site-title {
     font-size: 1.5em;
 	font-weight: 700;
+	line-height: 1;
     margin-top: 80px;
 	text-align: center;
 }
 
-header .site-description {
-    margin-top: 20px;
+.site-header .site-description {
+    line-height: 1.5;
+	margin: 20px auto 0 auto;
+	max-width: 620px;
 	text-align: center;
 }
 
@@ -322,6 +326,27 @@ header .site-description {
 /* -------------------------------------------------------------------------------- */
 
 
+.archive-header {
+	margin: 0;
+	text-align: center;
+	width: 100%;
+}
+
+.archive-title {
+	font-weight: 700;
+	line-height: 1.4;
+	text-align: inherit;
+}
+
+.archive-description {
+	margin-top: 30px;
+}
+
+.archive-description p {
+	text-align: inherit;
+}
+
+.archive-header:before,
 .post:before,
 .comments:before,
 .comment-respond:before,
@@ -837,7 +862,17 @@ ul.wp-block-gallery:not(.alignright) {
 
 
 /* -------------------------------------------------------------------------------- */
-/*	8.	Footer
+/*	8.	Error 404
+/* -------------------------------------------------------------------------------- */
+
+
+.error404 .post p {
+	text-align: center;
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/*	9.	Footer
 /* -------------------------------------------------------------------------------- */
 
 
@@ -858,7 +893,7 @@ footer p + p {
 
 
 /* -------------------------------------------------------------------------------- */
-/*	9.	Media Queries
+/*	10.	Media Queries
 /* -------------------------------------------------------------------------------- */
 
 
@@ -884,9 +919,9 @@ footer p + p {
     
     .show-menu nav { display: block; }
     
-    header { margin-bottom: 40px; }
+    .site-header { margin-bottom: 40px; }
     
-    header h2 { margin-top: 40px; }
+    .site-header .site-title { margin-top: 40px; }
     
     .post:before,
     .comments:before,

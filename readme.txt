@@ -31,6 +31,24 @@ Source: https://fonts.google.com/specimen/PT+Serif
 
 == Changelog ==
 
+Version 1.17 (2019-04-13)
+-------------------------
+- Site title is now a h1 only on the front page, and the post title is a h1 on single (instead of a h2)
+- Added output of archive-title and archive-description
+- Set a max-width for the site-description, and increased its line-height
+- Adjusted targeting to be more specific, less prone to hit unintended elements
+- Added theme version to stylesheet enqueue for cache busting
+- Formatting
+
+Version 1.16 (2019-04-07)
+-------------------------
+- Added the new wp_body_open() function, along with a function_exists check
+
+Version 1.15 (2019-01-11)
+-------------------------
+- Fixed the pagination not working on the last page
+- Center the paragraph on 404 page
+
 Version 1.14 (2018-12-15)
 -------------------------
 - Accessibility updates:
