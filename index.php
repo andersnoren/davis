@@ -21,8 +21,8 @@
 		}
 		?>
 
-		<a class="skip-link screen-reader-text" href="#site-content"><?php _e( 'Skip to the content', 'koji' ); ?></a>
-		<a class="skip-link screen-reader-text" href="#menu-menu"><?php _e( 'Skip to the main menu', 'koji' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#site-content"><?php _e( 'Skip to the content', 'davis' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#menu-menu"><?php _e( 'Skip to the main menu', 'davis' ); ?></a>
     
         <header class="site-header" role="banner">
             

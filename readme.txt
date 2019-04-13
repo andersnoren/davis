@@ -19,7 +19,7 @@ All theme specific options are handled through the WordPress Customizer.
 == Frequently Asked Questions ==
 
 = How do I activate dark mode? =
-Dark Mode displays the site with white text and black background. You can activate it in Appearance > Customize, in the Colors tab.
+Dark Mode displays the site with white text and black background. You can activate it in Appearance → Customize, in the Colors tab.
 
 
 == Licenses ==
@@ -30,6 +30,10 @@ Source: https://fonts.google.com/specimen/PT+Serif
 
 
 == Changelog ==
+
+Version 1.18 (2019-04-13)
+-------------------------
+- Fixed the theme containing multiple text domains
 
 Version 1.17 (2019-04-13)
 -------------------------
