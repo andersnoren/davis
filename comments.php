@@ -23,11 +23,11 @@ if ( comments_open() || pings_open() ) :
 		'comment_notes_after' 	=> '' 
 	) );
 	
-elseif ( $comments ) : ?>
+else : ?>
 
-	<div id="respond">
+	<div class="comments" id="respond">
 		
-		<p class="closed"><?php _e( 'Comments closed', 'davis' ); ?></p>
+		<p class="comments-closed"><?php _e( 'Comments are closed.', 'davis' ); ?></p>
 		
 	</div><!-- #respond -->
 

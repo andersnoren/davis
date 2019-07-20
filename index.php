@@ -48,9 +48,17 @@
 		
 		<main class="wrapper" id="site-content" role="main">
 
-			<?php if ( is_archive() ) :
-				$archive_title = get_the_archive_title();
-				$archive_description = get_the_archive_description();
+			<?php if ( is_archive() || is_search() ) :
+
+				if ( is_search() ) {
+					global $wp_query;
+					// Translators: %s = The search query
+					$archive_title = sprintf( _x( 'Search Results: &ldquo;%s&rdquo;', '%s = The search query', 'davis' ), get_search_query() );
+					$archive_description = sprintf( _nx( '%s result was found.', '%s results were found.', $wp_query->found_posts, '%s = The search query', 'davis' ), $wp_query->found_posts );
+				} else {
+					$archive_title = get_the_archive_title();
+					$archive_description = get_the_archive_description();
+				}
 				?>
 
 				<header class="archive-header">
@@ -80,7 +88,7 @@
 
                         <?php endif; ?>
                         
-                        <?php if ( has_post_thumbnail() ) : ?>
+                        <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
                         
                             <a href="<?php the_permalink(); ?>" class="featured-image">
                                 <?php the_post_thumbnail( 'post-image' ); ?>    
@@ -101,7 +109,9 @@
                         
                         if ( is_singular() ) wp_link_pages();
 
-                        if ( get_post_type() == 'post' ) : ?>
+						$post_type = get_post_type();
+
+                        if ( $post_type == 'post' ) : ?>
 
                             <div class="meta">
 
@@ -109,7 +119,7 @@
                                 
                                     <a href="<?php the_permalink(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
 
-                                    <?php if ( comments_open() ) : ?>
+                                    <?php if ( comments_open() && ! post_password_required() ) : ?>
                                         <span class="sep"></span><?php comments_popup_link( __( 'Add Comment', 'davis' ), __( '1 Comment', 'davis' ), '% ' . __( 'Comments', 'davis' ), '', __( 'Comments off', 'davis' ) ); ?>
                                     <?php endif; ?>
                                     
@@ -130,7 +140,11 @@
 
                         <?php endif;
                         
-                        if ( is_singular() ) comments_template(); ?>
+                        if ( ( $post_type == 'post' || comments_open() || get_comments_number() ) && ! post_password_required() ) {
+							comments_template();
+						}  
+						
+						?>
 
                     </div><!-- .post -->
 

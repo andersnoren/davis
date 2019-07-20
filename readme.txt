@@ -2,7 +2,7 @@
 Contributors: Anlino
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Requires at least: 4.4
-Tested up to: 4.8
+Tested up to: 5.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,20 @@ Source: https://fonts.google.com/specimen/PT+Serif
 
 
 == Changelog ==
+
+Version 1.20 (2019-07-XX)
+-------------------------
+- Fixed badly formatted GNU text in style.css header
+
+Version 1.19 (2019-07-20)
+-------------------------
+- Added theme URI to style.css
+- Updated "Tested up to"
+- Added theme tags
+- Don't show comments if the post is password protected
+- Don't show the post thumbnail if the post is password protected
+- Fixed search archive header not being displayed
+- Better menu styling
 
 Version 1.18 (2019-04-13)
 -------------------------
