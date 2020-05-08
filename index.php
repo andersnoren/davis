@@ -99,8 +99,12 @@
                         <div class="content">
 
                             <?php 
-							the_content(); 
-							edit_post_link();
+							if ( is_search() ) {
+								the_excerpt();
+							} else {
+								the_content(); 
+								edit_post_link();
+							}
 							?>
 
                         </div><!-- .content -->
@@ -109,9 +113,7 @@
                         
                         if ( is_singular() ) wp_link_pages();
 
-						$post_type = get_post_type();
-
-                        if ( $post_type == 'post' ) : ?>
+                        if ( get_post_type() == 'post' ) : ?>
 
                             <div class="meta">
 
@@ -130,17 +132,15 @@
                                 </p>
 
                                 <?php if ( is_singular( 'post' ) ) : ?>
-                                
                                     <p><?php _e( 'In', 'davis' ); ?> <?php the_category( ', ' ); ?></p>
                                     <p><?php the_tags( ' #', ' #', ' ' ); ?></p>
-                                    
                                 <?php endif; ?>
 
                             </div><!-- .meta -->
 
                         <?php endif;
                         
-                        if ( ( $post_type == 'post' || comments_open() || get_comments_number() ) && ! post_password_required() ) {
+                        if ( ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 							comments_template();
 						}  
 						
@@ -152,12 +152,10 @@
                 
                 endwhile;
 
-            else : ?>
+            elseif ( is_404() ) : ?>
 
                 <div class="post">
-
                     <p><?php _e( 'Sorry, the page you requested cannot be found.', 'davis' ); ?></p>
-
                 </div><!-- .post -->
 
             <?php endif;
@@ -165,10 +163,8 @@
             if ( ! is_singular() && ( get_previous_posts_link() || get_next_posts_link() ) ) : ?>
 	        
 		        <div class="pagination">
-			        
 					<?php previous_posts_link( '&larr; ' . __( 'Newer posts', 'davis' ) ); ?>
 					<?php next_posts_link( __( 'Older posts', 'davis') . ' &rarr;' ); ?>
-					
 		        </div><!-- .pagination -->
 	        
 	        <?php endif; ?>

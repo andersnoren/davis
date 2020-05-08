@@ -69,52 +69,6 @@ if ( ! function_exists( 'davis_load_scripts' ) ) :
 endif;
 
 
-/* BODY CLASSES
------------------------------------------------- */
-
-if ( ! function_exists( 'davis_body_classes' ) ) :
-	function davis_body_classes( $classes ) {
-
-		// Check whether we want it darker
-		if ( get_theme_mod( 'davis_dark_mode' ) ) {
-			$classes[] = 'dark-mode';
-		}
-		
-		return $classes;
-
-	}
-	add_action( 'body_class', 'davis_body_classes' );
-endif;
-
-
-/* CUSTOMIZER SETTINGS
------------------------------------------------- */
-
-if ( ! class_exists( 'Davis_Customize' ) ) :
-	class Davis_Customize {
-
-		public static function davis_register( $wp_customize ) {
-
-			// Dark Mode
-			$wp_customize->add_setting( 'davis_dark_mode', array(
-				'capability' 		=> 'edit_theme_options',
-				'sanitize_callback' => 'sanitize_text_field',
-			) );
-
-			$wp_customize->add_control( 'davis_dark_mode', array(
-				'type' 			=> 'checkbox',
-				'section' 		=> 'colors', // Default WP section added by background_color
-				'label' 		=> __( 'Dark Mode', 'davis' ),
-				'description' 	=> __( 'Displays the site with white text and black background. If Background Color is set, only the text color will change.', 'davis' ),
-			) );
-			
-		}
-
-	}
-	add_action( 'customize_register', array( 'davis_customize', 'davis_register' ) );
-endif;
-
-
 /* ---------------------------------------------------------------------------------------------
    SPECIFY GUTENBERG SUPPORT
 ------------------------------------------------------------------------------------------------ */
@@ -126,12 +80,12 @@ if ( ! function_exists( 'davis_add_block_editor_features' ) ) :
 
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name' 	=> _x( 'Black', 'Name of the black color in the Gutenberg palette', 'davis' ),
+				'name' 	=> __( 'Black', 'davis' ),
 				'slug' 	=> 'black',
 				'color' => '#000',
 			),
 			array(
-				'name' 	=> _x( 'White', 'Name of the white color in the Gutenberg palette', 'davis' ),
+				'name' 	=> __( 'White', 'davis' ),
 				'slug' 	=> 'white',
 				'color' => '#fff',
 			),

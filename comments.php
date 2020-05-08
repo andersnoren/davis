@@ -7,9 +7,7 @@
 		<?php wp_list_comments( array( 'style' => 'div' ) ); ?>
 		
 		<?php if ( paginate_comments_links( array( 'echo' => false ) ) ) : ?>
-		
 			<div class="pagination"><?php paginate_comments_links(); ?></div>
-		
 		<?php endif; ?>
     
 	</div><!-- .comments -->
@@ -23,4 +21,4 @@ if ( comments_open() || pings_open() ) :
 		'comment_notes_after' 	=> '' 
 	) );
 	
-endif; ?>
+endif;

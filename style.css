@@ -2,8 +2,8 @@
 
 	Theme Name: Davis
     Text Domain: davis
-	Version: 1.20
-	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a really lightweight blog theme. It consists of three PHP files and weighs in at just 38 KB, excluding screenshot.png. It features the aside post format, Block Editor support, a Dark Mode style option, featured images, and a responsive design. Demo: https://www.andersnoren.se/themes/davis/
+	Version: 2.0.0
+	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a really lightweight blog theme. It consists of three PHP files and weighs in at just 36 KB, excluding screenshot.png. It features the aside post format, Block Editor support, featured images, and a responsive design. Demo: https://www.andersnoren.se/themes/davis/
 	Tags: blog, one-column, custom-menu, featured-images, post-formats, threaded-comments, translation-ready, block-styles, wide-blocks
 	Author: Anders Norén
 	Author URI: https://www.andersnoren.se
@@ -113,11 +113,6 @@ body {
     font-size: 18px;
 }
 
-body.dark-mode {
-	background-color: #000;
-	color: #fff;
-}
-
 body * {
         -webkit-box-sizing: border-box; 
         -moz-box-sizing: border-box; 
@@ -132,11 +127,6 @@ a {
 a,
 a:hover {
 	color: #000;
-}
-
-.dark-mode a,
-.dark-mode a:hover {
-	color: #fff;
 }
 
 body a:hover,
@@ -253,10 +243,6 @@ input::-moz-placeholder { color: #767676; }
             top: 8px;
     }
 	
-	.dark-mode .menu li ul:before {
-        border-bottom-color: #fff;
-    }
-
     .menu ul a {
         background: #000;
         color: #fff;
@@ -265,13 +251,7 @@ input::-moz-placeholder { color: #767676; }
         text-align: center;
     }
 	
-	.dark-mode .menu ul a {
-		background: #fff;
-		color: #000;
-	}
-
     .menu ul a:hover { color: #fff; }
-	.dark-mode .menu ul a:hover { color: #000; }
 
 	.menu > li:hover > ul,
 	.menu ul.focusable {
@@ -291,11 +271,6 @@ input::-moz-placeholder { color: #767676; }
         left: 14px;
         top: 18px;
     }
-	
-	.dark-mode .menu ul li ul:before {
-		border-color: transparent;
-        border-right-color: #fff;
-	}
 
 	.menu ul li:hover > ul,
 	.menu ul ul.focusable {
@@ -362,15 +337,6 @@ input::-moz-placeholder { color: #767676; }
 	display: block;
 	height: 16px;
 	margin: 80px auto;
-}
-
-.dark-mode .post:before,
-.dark-mode .comments:before,
-.dark-mode .comment-respond:before,
-.dark-mode .comments .comment-respond:after,
-.dark-mode .pagination:before,
-.dark-mode .site-footer:before {
-    background-image: url( assets/images/dark-sep.png );
 }
 
 .entry-title {
@@ -493,8 +459,6 @@ blockquote {
     padding: 0 0 0 30px;
 }
 
-.dark-mode blockquote { border-left-color: #444; }
-
 blockquote p { font-style: italic; }
 
 blockquote cite:before { content: "— "; }
@@ -555,10 +519,6 @@ fieldset {
 	padding: 25px;
 }
 
-.dark-mode fieldset {
-    border-color: #444;
-}
-
 fieldset legend {
     font-size: 0.9em;
     font-style: italic;
@@ -586,17 +546,6 @@ input[type="url"] {
     width: 100%;
 }
 
-.dark-mode textarea,
-.dark-mode input[type="email"],
-.dark-mode input[type="password"],
-.dark-mode input[type="tel"],
-.dark-mode input[type="text"],
-.dark-mode input[type="url"] {
-	background: #000;
-    border-color: #444;
-    color: #fff;
-}
-
 textarea {
     line-height: 1.5;
 	height: 200px;
@@ -615,19 +564,9 @@ input[type="submit"] {
 	-webkit-appearance: none;
 }
 
-.dark-mode input[type="button"],
-.dark-mode input.button,
-.dark-mode input[type="submit"] {
-	background: #fff;
-	color: #000;
-}
-
 input[type="button"]:hover,
 input.button:hover,
-input[type="submit"]:hover,
-.dark-mode input[type="button"]:hover,
-.dark-mode input.button:hover,
-.dark-mode input[type="submit"]:hover {
+input[type="submit"]:hover {
 	background: #767676;
 	cursor: pointer;
 }
@@ -673,15 +612,8 @@ th {
 }
 
 tbody > tr:nth-child(even) { background-color: #f6f6f6; }
-.dark-mode tbody > tr:nth-child(even) { background-color: #222; }
 
-.dark-mode caption,
-.dark-mode th {
-    border-bottom-color: #444;
-}
-
-
-/* Gutenberg Accent Colors --------------------------------------- */
+/* Block Editor Accent Colors ---------------- */
 
 .has-background { background-color: #000; }
 
@@ -691,8 +623,7 @@ tbody > tr:nth-child(even) { background-color: #f6f6f6; }
 .has-white-color { color: #fff; }
 .has-white-background-color { background-color: #fff; }
 
-
-/* Block: Image --------------------------------------- */
+/* Block: Image ------------------------------ */
 
 .wp-block-image .aligncenter > figcaption, 
 .wp-block-image .alignleft > figcaption, 
@@ -701,7 +632,6 @@ tbody > tr:nth-child(even) { background-color: #f6f6f6; }
 	display: block;
 	width: 100%;
 }
-
 
 /* Block: File --------------------------------------- */
 
@@ -722,7 +652,6 @@ tbody > tr:nth-child(even) { background-color: #f6f6f6; }
 	text-decoration: none;
 }
 
-
 /* Block: Quote --------------------------------------- */
 
 .wp-block-quote.is-large {
@@ -735,13 +664,11 @@ tbody > tr:nth-child(even) { background-color: #f6f6f6; }
 	line-height: 1.5;
 }
 
-
 /* Block: Pullquote --------------------------------------- */
 
 .wp-block-pullquote {
 	padding: 0;
 }
-
 
 /* Block: Gallery --------------------------------------- */
 
@@ -759,20 +686,17 @@ ul.wp-block-gallery:not(.alignright) {
 	margin-left: 0;
 }
 
-
 /* Block: Cover Image --------------------------------------- */
 
 .wp-block-cover-image.alignfull {
 	min-height: 75vh;
 }
 
-
 /* Block: Column --------------------------------------- */
 
 .wp-block-column {
 	padding: 0 5px;
 }
-
 
 /* Block: Audio --------------------------------------- */
 
@@ -784,7 +708,6 @@ ul.wp-block-gallery:not(.alignright) {
 /* -------------------------------------------------------------------------------- */
 /*	6.	Comments
 /* -------------------------------------------------------------------------------- */
-
 
 
 .comments-closed { text-align: center; }

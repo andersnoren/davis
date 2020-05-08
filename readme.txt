@@ -2,7 +2,7 @@
 Contributors: Anlino
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Requires at least: 4.4
-Tested up to: 5.4
+Tested up to: 5.4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,15 +13,6 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 1. Upload the theme
 2. Activate the theme
 
-All theme specific options are handled through the WordPress Customizer.
-
-
-== Frequently Asked Questions ==
-
-= How do I activate dark mode? =
-Dark Mode displays the site with white text and black background. You can activate it in Appearance → Customize, in the Colors tab.
-
-
 == Licenses ==
 
 PT Serif
@@ -30,6 +21,14 @@ Source: https://fonts.google.com/specimen/PT+Serif
 
 
 == Changelog ==
+
+Version 2.0.0 (2020-05-08)
+-------------------------
+- Removed the dark mode setting from Davis, since it added quite a bit of bulk to a theme meant to be as small as possible.
+- Updated the theme description accordingly.
+- Bumped "Tested up to" to 5.4.1.
+- Fixed the 404 message showing up on search pages without results.
+- Display excerpts on search results pages, instead of the full content.
 
 Version 1.20 (2020-04-11)
 -------------------------
