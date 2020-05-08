@@ -66,9 +66,6 @@ davis.intrinsicRatioEmbeds = {
 
 // ======================================================================= Function calls
 $( document ).ready( function( ) {
-
 	davis.menu.init();						// Menus
-
 	davis.intrinsicRatioEmbeds.init();		// Embed resizing
-
 } );

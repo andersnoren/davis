@@ -30,7 +30,7 @@
 
 			<?php if ( has_nav_menu( 'primary-menu' ) ) : ?> 
 
-				<nav role="navigation">
+				<nav class="site-nav" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
 				</nav>
 
@@ -91,7 +91,7 @@
                         <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
                         
                             <a href="<?php the_permalink(); ?>" class="featured-image">
-                                <?php the_post_thumbnail( 'post-image' ); ?>    
+                                <?php the_post_thumbnail(); ?>    
                             </a>
                             
                         <?php endif; ?>
@@ -173,7 +173,7 @@
 	        
 	        <?php endif; ?>
 	        
-	        <footer role="contentinfo">
+	        <footer class="site-footer" role="contentinfo">
 		        
 		        <p>&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></p>
 		        <p><?php _e( 'Theme by', 'davis' ); ?> <a href="https://www.andersnoren.se">Anders Nor&eacute;n</a></p>

@@ -3,7 +3,7 @@
 	Theme Name: Davis
     Text Domain: davis
 	Version: 1.20
-	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a *really* lightweight blog theme. It consists of just three PHP files and weighs in at 61 KB, excluding screenshot.png. It features the aside post format, Block Editor/Gutenberg support, a Dark Mode style option, featured images and a responsive design. Demo: https://www.andersnoren.se/themes/davis/
+	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a really lightweight blog theme. It consists of three PHP files and weighs in at just 38 KB, excluding screenshot.png. It features the aside post format, Block Editor support, a Dark Mode style option, featured images, and a responsive design. Demo: https://www.andersnoren.se/themes/davis/
 	Tags: blog, one-column, custom-menu, featured-images, post-formats, threaded-comments, translation-ready, block-styles, wide-blocks
 	Author: Anders Norén
 	Author URI: https://www.andersnoren.se
@@ -21,7 +21,7 @@
 	2.  Structure
 	3.	Header
 	4.	Blog
-	5.  Post Content
+	5.  Entry Content
 	6.	Comments
 	7.	Pagination
 	8.	Error 404
@@ -107,14 +107,14 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 body {
-    background: #fff;
+    background-color: #fff;
 	border: none;
     color: #000;
     font-size: 18px;
 }
 
 body.dark-mode {
-	background: #000;
+	background-color: #000;
 	color: #fff;
 }
 
@@ -205,7 +205,7 @@ input::-moz-placeholder { color: #767676; }
 	text-decoration: line-through; 
 }
 
-.site-header nav { 
+.site-nav { 
 	margin: 20px 0 0; 
 }
 
@@ -355,7 +355,7 @@ input::-moz-placeholder { color: #767676; }
 .comment-respond:before,
 .comments .comment-respond:after,
 .pagination:before,
-footer:before {
+.site-footer:before {
     background: url( assets/images/sep.png ) no-repeat center;
     background-size: auto 100%;
 	content: "";
@@ -369,7 +369,7 @@ footer:before {
 .dark-mode .comment-respond:before,
 .dark-mode .comments .comment-respond:after,
 .dark-mode .pagination:before,
-.dark-mode footer:before {
+.dark-mode .site-footer:before {
     background-image: url( assets/images/dark-sep.png );
 }
 
@@ -405,7 +405,7 @@ span.sep { margin: 0 15px; }
 
 
 /* -------------------------------------------------------------------------------- */
-/*	5.	Post Content
+/*	5.	Entry Content
 /* -------------------------------------------------------------------------------- */
 
 
@@ -882,17 +882,17 @@ ul.wp-block-gallery:not(.alignright) {
 /* -------------------------------------------------------------------------------- */
 
 
-footer { 
+.site-footer { 
 	padding: 0 0 80px;
 	text-align: center;
 }
 
-footer p { 
+.site-footer p { 
     line-height: 1;
 	text-align: center; 
 }
 
-footer p + p { 
+.site-footer p + p { 
     font-style: italic;
     margin-top: 15px; 
 }
@@ -911,7 +911,7 @@ footer p + p {
 		display: block;
 	}
     
-    nav { 
+    .site-nav { 
         display: none;
         margin: 20px 0 0;
     }
@@ -923,7 +923,7 @@ footer p + p {
     
     .menu li li { font-style: italic; }
     
-    .show-menu nav { display: block; }
+    .show-menu .site-nav { display: block; }
     
     .site-header { margin-bottom: 40px; }
     
@@ -934,7 +934,7 @@ footer p + p {
     .comment-respond:before,
     .comments .comment-respond:after,
     .pagination:before,
-    footer:before {
+    .site-footer:before {
         margin: 50px auto;
     }
     
@@ -949,7 +949,7 @@ footer p + p {
     
     .pagination a + a { margin-left: 20px; }
     
-    footer { padding-bottom: 50px; }
+    .site-footer { padding-bottom: 50px; }
 
 }
 
@@ -960,7 +960,7 @@ footer p + p {
     .comment-respond:before, 
     .comments .comment-respond:after, 
     .pagination:before, 
-    footer:before {
+    .site-footer:before {
         margin: 30px auto;
     }
 

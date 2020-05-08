@@ -2,7 +2,7 @@
 Contributors: Anlino
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Requires at least: 4.4
-Tested up to: 5.2
+Tested up to: 5.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -31,9 +31,20 @@ Source: https://fonts.google.com/specimen/PT+Serif
 
 == Changelog ==
 
-Version 1.20 (2019-07-XX)
+Version 1.20 (2020-04-11)
 -------------------------
-- Fixed badly formatted GNU text in style.css header
+- Fixed badly formatted GNU text in style.css header.
+- Removed the "Comments are closed" text when comments are closed.
+- Changed "Tested up to" to 5.4.
+- Changed footer targeting to use a class instead (`.site-footer`), to prevent plugin targeting conflicts.
+- Removed the live preview of the Dark Mode option, to simplify the theme further.
+- Removed the custom sanitation function for the Customizer checkbox control, since `sanitize_text_field()` works just as well.
+- Made the Davis_Customize class use camelcase naming, and made it pluggable.
+- Removed the `is_admin()` check in wp_enqueue_scripts(), since it only gets triggered on the front-end.
+- Removed manual inclusion of language file, since GlotPress handles that for us.
+- Removed the `post-image` image size, and replaced it with use of the post thumbnail.
+- Added a class to the nav element (`.site-nav`) and updated targeting, to prevent targeting conflicts with blocks and plugins.
+- Updated the readme file.
 
 Version 1.19 (2019-07-20)
 -------------------------
