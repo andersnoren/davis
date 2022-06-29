@@ -2,14 +2,16 @@
 
 	Theme Name: Davis
     Text Domain: davis
-	Version: 2.0.0
-	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a really lightweight blog theme. It consists of three PHP files and weighs in at just 36 KB, excluding screenshot.png. It features the aside post format, Block Editor support, featured images, and a responsive design. Demo: https://www.andersnoren.se/themes/davis/
+	Version: 2.1
+	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a really lightweight blog theme. It consists of three PHP files and weighs in at just 36 KB, excluding screenshot.png. It features the aside post format, Block Editor support, featured images, and a responsive design. Demo: https://andersnoren.se/themes/davis/
 	Tags: blog, one-column, custom-menu, featured-images, post-formats, threaded-comments, translation-ready, block-styles, wide-blocks
 	Author: Anders Norén
-	Author URI: https://www.andersnoren.se
+	Author URI: https://andersnoren.se
 	License: GNU General Public License version 2.0
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Theme URI: https://www.andersnoren.se/themes/davis-wordpress-theme/
+	Theme URI: https://andersnoren.se/themes/davis-wordpress-theme/
+	Requires PHP: 5.4
+	Tested up to: 6.0
 	
 	All files, unless otherwise stated, are released under the GNU General Public License
 	version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)

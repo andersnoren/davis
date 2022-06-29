@@ -2,7 +2,8 @@
 Contributors: Anlino
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Requires at least: 4.4
-Tested up to: 5.4.1
+Requires PHP: 5.4
+Tested up to: 6.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -21,6 +22,13 @@ Source: https://fonts.google.com/specimen/PT+Serif
 
 
 == Changelog ==
+
+Version 2.1 (2022-06-29)
+-------------------------
+- Switched from the Google Fonts CDN to font files included in the theme folder.
+- Bumped "Tested up to" to 6.0.
+- Removed www prefix from andersnoren.se URLs.
+- Added "Requires PHP" to style.css and readme.txt.
 
 Version 2.0.0 (2020-05-08)
 -------------------------
