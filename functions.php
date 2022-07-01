@@ -42,7 +42,7 @@ if ( ! function_exists( 'davis_load_style' ) ) :
 
 		$theme_version = wp_get_theme( 'davis' )->get( 'Version' );
 
-		wp_register_style( 'davis_fonts', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		wp_register_style( 'davis_fonts', get_theme_file_uri( '/assets/css/fonts.css' ) );
 		wp_enqueue_style( 'davis_style', get_stylesheet_uri(), array( 'davis_fonts' ), $theme_version );
 
 	}
