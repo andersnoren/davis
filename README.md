@@ -2,7 +2,7 @@
 
 Davis is a teeny-tiny WordPress theme that can be used a starter theme or a really lightweight blog theme. It consists of three PHP files and weighs in at just 36 KB, excluding screenshot.png. It features the aside post format, Block Editor support, featured images, and a responsive design.
 
-![Davis](https://github.com/andersnoren/davis/blob/main/screenshot.png)
+![Davis](https://github.com/andersnoren/davis/blob/master/screenshot.png)
 
 You can download the latest stable release of Davis [from WordPress.org](https://wordpress.org/themes/davis/).
 
