@@ -2,7 +2,7 @@
 
 	Theme Name: Davis
     Text Domain: davis
-	Version: 2.1.1
+	Version: 2.1.2
 	Description: Davis is a teeny-tiny WordPress theme that can be used a starter theme or a really lightweight blog theme. It consists of three PHP files and weighs in at just 36 KB, excluding screenshot.png. It features the aside post format, Block Editor support, featured images, and a responsive design. Demo: https://andersnoren.se/themes/davis/
 	Tags: blog, one-column, custom-menu, featured-images, post-formats, threaded-comments, translation-ready, block-styles, wide-blocks
 	Author: Anders Norén
@@ -11,7 +11,7 @@
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Theme URI: https://andersnoren.se/themes/davis-wordpress-theme/
 	Requires PHP: 5.4
-	Tested up to: 6.0
+	Tested up to: 6.3
 	
 	All files, unless otherwise stated, are released under the GNU General Public License
 	version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -45,7 +45,7 @@ html, body {
     min-height: 100%; 
 }
 
-h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small, strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
+h1, h2, h3, h4, h5, h6, p, blockquote, address, cite, img, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
 	margin:0;
 	padding:0;
 	border:0;
@@ -386,16 +386,16 @@ span.sep { margin: 0 15px; }
 	text-decoration: underline; 
 }
 
-em {
-    font-style: italic;
+.post p,
+.post figure {
+	margin-bottom: 30px;
+	margin-top: 30px;
 }
+
 
 .post p { 
 	line-height: 1.55;
-	margin-bottom: 30px; 
 }
-
-.post p:last-child { margin-bottom: 0; }
 
 .post h1,
 .post h2,
@@ -405,6 +405,7 @@ em {
 .post h6 {
     font-weight: 700;
 	margin-bottom: 30px;
+	margin-top: 30px;
 }
 
 .post hr {
@@ -414,6 +415,9 @@ em {
 }
 
 .post hr:before { content: "***"; }
+
+.post :first-child { margin-top: 0; }
+.post :last-child { margin-bottom: 0; }
 
 .content > ol,
 .content > ul {
